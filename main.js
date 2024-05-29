@@ -52,7 +52,7 @@ loadSprite('no star',"achievements/no star.png");
 loadSprite('half star',"achievements/half star.png");
 loadSprite('fullstar',"achievements/fullstar.png");
 
-let temps = 0;
+// let temps = 0;
 
 scene("accueil", () => {
 
@@ -181,12 +181,16 @@ const avatar = add([
    
    onKeyPress("space", () => {
       // Cycle through the dialogs
-      curDialog = (curDialog + 1) % dialogs.length
+      curDialog = (curDialog + 1) //% dialogs.length
       updateDialog()
    })
    
    // Update the on screen sprite & text
    function updateDialog() {
+    if(curDialog == dialogs.length-1) {
+        music.paused = true;
+        go ("tutoriel");
+    }
    
       const [ char, dialog ] = dialogs[curDialog]
    
@@ -206,12 +210,11 @@ const avatar = add([
    }
    
    updateDialog()
-   
 
    onKeyPress ("enter", () =>{
-      music.paused = true;
-      go ("tutoriel");
-   })
+    music.paused = true;
+    go ("tutoriel");
+ })
 });
 
 
@@ -297,12 +300,16 @@ scene("tutoriel", () => {
    
    onKeyPress("space", () => {
       
-      curDialog = (curDialog + 1) % dialogs.length
+      curDialog = (curDialog + 1)
       updateDialog()
    })
    
   
    function updateDialog() {
+        if(curDialog == dialogs.length-1) {
+            music.paused = true;
+            go ("game");
+        }
    
       const [ char, dialog ] = dialogs[curDialog]
    
@@ -742,16 +749,14 @@ onKeyDown("right", () => {
                temps: temps,
            })
        } else {
-            music.paused = true
-           go("finish")
+           music.paused = true
+           go("finish",{temps : temps})
       }
    })
 
    player.onCollide("final", () => {
-      if (temps>20000){
-         music.paused = true
-         go('finish')
-      }
+    music.paused = true
+    go("finish",{temps : temps})
    })
 
 
@@ -1046,8 +1051,7 @@ pauseMenuThree.paused = true;
 
 });
 
-scene("finish", () => {
-
+scene("finish", ({temps}) => {
   
    const music = play("finish",{
       loop : true,
@@ -1116,16 +1120,18 @@ scene("finish", () => {
    
    onKeyPress("space", () => {
       
-      curDialog = (curDialog + 1) % dialogs.length
+      curDialog = (curDialog + 1)
       updateDialog()
    })
    
    
    function updateDialog() {
-   
+    if(curDialog == dialogs.length-1) {
+        music.paused = true;
+        go ("end", {temps : temps});
+    }
       const [ char, dialog ] = dialogs[curDialog]
    
-      
       avatar.use(sprite(char))
       
       txt.text = dialog
@@ -1137,14 +1143,12 @@ scene("finish", () => {
    
    onKeyPress ("enter", () =>{
       music.paused = true;
-      go ("end");
+      go ("end", {temps : temps});
    })
 });
 
 
-scene("end", () => {
-
-  
+scene("end", ({temps}) => { 
    const music = play("end",{
       loop : true,
       volume : 0.8
@@ -1209,12 +1213,8 @@ scene("end", () => {
       ]);
   }
 
-
    onKeyPress ("enter", () =>{
       music.paused = true;
       go ("accueil");
    })
 });
-
-
-// test
