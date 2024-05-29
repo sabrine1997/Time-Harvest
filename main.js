@@ -122,7 +122,7 @@ scene("intro", () => {
    ]);
 
    add([
-      text(" Appuie sur Enter pour sauter le dialogue, appuie sur la spacebar pour le défiler",{
+      text(" Appuie sur Enter pour sauter le dialogue, appuie sur la barre espace pour le défiler",{
          width : 700,
       
          
@@ -236,7 +236,7 @@ scene("tutoriel", () => {
    ]);
 
    add([
-      text(" Appuie sur Enter pour sauter le tutoriel,la spacebar pour le défiler",{
+      text(" Appuie sur Enter pour sauter le tutoriel,la barre espace pour le défiler",{
          width : 600,
       
          
@@ -895,7 +895,7 @@ const pauseMenu = add([
 ]);
 
 pauseMenu.add([
-    text("Une bouteille d'eau met 400 ans à se décomposer!  Fais bien attention à toutes les ramasser!  Appuie sur la spacebar pour continuer!", {
+    text("Une bouteille d'eau met 400 ans à se décomposer!  Fais bien attention à toutes les ramasser!  Appuie sur Enter  pour continuer!", {
         width: 180,
         size: 20,
         align: "center",
@@ -918,7 +918,7 @@ const pauseMenuTwo = add([
 ]);
 
 pauseMenuTwo.add([
-    text("Une bouteille en verre peut mettre 4000 ans à se dégrader! Appuie sur la spacebar pour continuer!", {
+    text("Une bouteille en verre peut mettre 4000 ans à se dégrader! Appuie sur Enter pour continuer!", {
         width: 180,
         size: 20,
         align: "center",
@@ -953,7 +953,7 @@ player.onCollide("garbage one", () => {
    }
 });
 
-onKeyPress("space", () => {
+onKeyPress("enter", () => {
    if (game.paused) {
        game.paused = false;
        if (curTween) curTween.cancel();
@@ -1008,7 +1008,7 @@ const pauseMenuThree = add([
 ]);
 
 pauseMenuThree.add([
-   text("Le contenu d'une poubelle non triée peut mettre jusqu'à 5000 ans à se décomposer! Il faut donc faire attention de bien trier et recycler! Appuie sur la spacebar pour continuer!", {
+   text("Le contenu d'une poubelle non triée peut mettre jusqu'à 5000 ans à se décomposer! Il faut donc faire attention de bien trier et recycler! Appuie sur Enter pour continuer!", {
        width: 180,
        size: 20,
        align: "center",
