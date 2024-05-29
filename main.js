@@ -84,7 +84,7 @@ scene("accueil", () => {
    ]);
 
    add([
-      text("Appuie sur enter pour commencer!",{
+      text("Appuie sur Enter pour commencer!",{
          width : 400
       
       }),
@@ -122,7 +122,7 @@ scene("intro", () => {
    ]);
 
    add([
-      text(" Appuie sur enter pour sauter le dialogue, appuie sur la spacebar pour le défiler",{
+      text(" Appuie sur Enter pour sauter le dialogue, appuie sur la spacebar pour le défiler",{
          width : 700,
       
          
@@ -148,7 +148,7 @@ scene("intro", () => {
       [ "pinky", "Notre cher voyageur ici possède le pouvoir de tout changer!"],
       [ "ghosty", "Iel va nous sauver?!" ],
       [ "pinky", "Ça.. Seul iel peut en décider.." ],
-      [ "leafs", "Appuie sur enter pour continuer" ],
+      [ "leafs", "Appuie sur Enter pour continuer" ],
    
    ];
    
@@ -236,7 +236,7 @@ scene("tutoriel", () => {
    ]);
 
    add([
-      text(" Appuie sur enter pour sauter le tutoriel,la spacebar pour le défiler",{
+      text(" Appuie sur Enter pour sauter le tutoriel,la spacebar pour le défiler",{
          width : 600,
       
          
@@ -265,7 +265,7 @@ scene("tutoriel", () => {
       [ "dude", "Car vois-tu, chaque déchet, c'est du temps qu'on perd.. " ],
       [ "dude", "Du temps précieux qu'il nous faut récupérer" ],
       [ "dude", "Peux-tu nous aider à attraper les déchets, et nous sauver?"],
-      [ "leafs", "Appuie sur enter pour continuer" ],
+      [ "leafs", "Appuie sur Enter pour continuer" ],
 
    
    ];
@@ -895,7 +895,7 @@ const pauseMenu = add([
 ]);
 
 pauseMenu.add([
-    text("Une bouteille d'eau mets 400 ans à se décomposer!  Fais bien attention à toutes les ramasser!  Appuie sur la spacebar pour continuer!", {
+    text("Une bouteille d'eau met 400 ans à se décomposer!  Fais bien attention à toutes les ramasser!  Appuie sur la spacebar pour continuer!", {
         width: 180,
         size: 20,
         align: "center",
@@ -1082,7 +1082,7 @@ scene("finish", () => {
       [ "pinky", "sshh.. Allez, iel n'est pas responsable pour toute sa communauté." ],
       [ "pinky", "Je suis sûre qu'iel va faire de son mieux de son côté- " ],
       [ "pinky", "Pas vrai?" ],
-      [ "leafs", "Les trois mignonnes créatures sont reparties vers leur contrée. Appuie sur enter pour continuer!" ],
+      [ "leafs", "Les trois mignonnes créatures sont reparties vers leur contrée. Appuie sur Enter pour continuer!" ],
 
    
    ];
@@ -1160,7 +1160,7 @@ scene("end", () => {
    ]);
 
    add([
-      text("Merci d'avoir joué à Time Harvest! Press enter pour recommencer!", {
+      text("Merci d'avoir joué à Time Harvest! Appuie sur Enter pour recommencer!", {
          size: 26,
          
       }),
