@@ -2,7 +2,8 @@ kaboom({
     backgroundAudio: true,
     background : [0,10,50],
     width : 1400,
-    height : 800
+    height : 800,
+    letterbox : true // prendre l'entier de la fenêtre
  })
 
 loadSound('welcome',"music/welcome.wav");
@@ -55,8 +56,6 @@ let temps = 0;
 
 scene("accueil", () => {
 
-
-
    const music = play("welcome",{
       loop : true,
       volume : 0.8
@@ -78,7 +77,7 @@ scene("accueil", () => {
          width : 400
       
       }),
-      
+      color(0,0,0),
       anchor("center"),
       pos(700,300) 
    ]);
@@ -86,9 +85,8 @@ scene("accueil", () => {
    add([
       text("Appuie sur Enter pour commencer!",{
          width : 400
-      
       }),
-      
+      color(0,0,0),
       anchor("center"),
       pos(700,500) 
    ]);
@@ -267,7 +265,6 @@ scene("tutoriel", () => {
       [ "dude", "Peux-tu nous aider à attraper les déchets, et nous sauver?"],
       [ "leafs", "Appuie sur Enter pour continuer" ],
 
-   
    ];
    
    let curDialog = 0
@@ -479,7 +476,11 @@ scene("game", ({ levelId, temps } = { levelId: 0, temps: 0 }) => {
 
         ],
            "=": () => [
-               sprite("maintile"),
+            // adaptation de la taille du sprite
+               sprite("maintile",{
+                    width:64,
+                    height: 100
+               }),
                area(),
                scale(1),
                body({ isStatic: true }),
