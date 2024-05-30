@@ -1181,10 +1181,10 @@ scene("end", ({temps}) => {
   ]);
 
   
-  if (temps >= 40000) {
+  if (temps >= 30000) {
       
       add([
-          text("Tu as économisé à la terre 20'000 ans de pollution!"),
+          text(`Tu as économisé à la terre ${temps} ans de pollution!`),
           anchor("center"),
           pos(700,300), 
       ]);
