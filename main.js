@@ -21,9 +21,11 @@ loadSprite('leafs',"characters/leafs.png");
 loadSprite('background1',"backgrounds/origbig.png");
 loadSprite('background2',"backgrounds/forest.png");
 loadSprite('background3',"backgrounds/field.png");
+loadSprite('background3.2',"backgrounds/fields.png");
 loadSprite('background4',"backgrounds/walls.png");
 loadSprite('background5',"backgrounds/blue.png");
 loadSprite('background6',"backgrounds/mountain.png");
+
 
 loadSprite('wb',"trash/wb.png");
 loadSprite('swb',"trash/swb.png");
@@ -52,6 +54,9 @@ loadSprite('no star',"achievements/no star.png");
 loadSprite('half star',"achievements/half star.png");
 loadSprite('fullstar',"achievements/fullstar.png");
 
+loadSprite('space',"tutorial/spacebar.webp");
+loadSprite('arrows',"tutorial/arrows.webp");
+
 // let temps = 0;
 
 scene("accueil", () => {
@@ -73,24 +78,53 @@ scene("accueil", () => {
 
 
    add([
-      text("Bienvenue à Time Harvest!",{
-         width : 400
+      text("Time Harvest",{
+         width : 1000,
+         size: 80,
       
       }),
-      color(0,0,0),
+      color(35, 135, 35),
       anchor("center"),
-      pos(700,300) 
+      pos(900,150) 
    ]);
 
    add([
-      text("Appuie sur Enter pour commencer!",{
-         width : 400
+      text("Appuie sur la touche ENTER pour commencer!",{
+         width : 1000
       }),
-      color(0,0,0),
       anchor("center"),
-      pos(700,500) 
+      pos(750,650) 
    ]);
    
+
+
+ loadSprite("pinky", "characters/PinkyRun.png", {
+    sliceX: 6,
+    
+    anims: {
+       "first idle": {
+         
+          from: 0,
+          to: 5,
+          
+          speed: 8,
+          loop: true,
+       },
+       
+    },
+ })
+
+ const player = add([
+    sprite("pinky"),
+    pos(700,450),
+    scale(12),
+    anchor("center"),
+])
+
+
+player.play("first idle")
+
+
    onKeyPress ("enter", () =>{
       music.paused = true;
       go ("intro");
@@ -120,14 +154,14 @@ scene("intro", () => {
    ]);
 
    add([
-      text(" Appuie sur Enter pour sauter le dialogue, appuie sur la barre espace pour le défiler",{
-         width : 700,
+      text(" Appuie sur ENTER pour sauter le dialogue, appuie sur la barre ESPACE pour le défiler",{
+         width : 600,
       
          
       }),
       
       anchor("center"),
-      pos(950,150) 
+      pos(1050,150) 
       
    ]);
    
@@ -237,16 +271,16 @@ scene("tutoriel", () => {
    ]);
 
    add([
-      text(" Appuie sur Enter pour sauter le tutoriel,la barre espace pour le défiler",{
-         width : 600,
-      
-         
-      }),
-      
-      anchor("center"),
-      pos(1150,180) 
-      
-   ]);
+    text(" Appuie sur ENTER pour sauter le dialogue, appuie sur la barre ESPACE pour le défiler",{
+       width : 600,
+    
+       
+    }),
+    
+    anchor("center"),
+    pos(1100,150) 
+    
+ ]);
    
 
    const dialogs = [
@@ -308,7 +342,7 @@ scene("tutoriel", () => {
    function updateDialog() {
         if(curDialog == dialogs.length-1) {
             music.paused = true;
-            go ("game");
+            go ("tutoriel jeu");
         }
    
       const [ char, dialog ] = dialogs[curDialog]
@@ -325,10 +359,90 @@ scene("tutoriel", () => {
 
    onKeyPress ("enter", () =>{
       music.paused = true;
-      go ("game");
+      go ("tutoriel jeu");
    })
 });
 
+scene("tutoriel jeu", () => {
+
+
+    const music = play("pregame",{
+        loop : true,
+        volume : 0.8
+     });
+  
+     const background = add ([
+        sprite("background3.2",{
+           width: width(),
+           height:height(),
+           fixed: true,
+        
+        }),
+  
+        fixed(),
+     ]);
+  
+     add([
+        text(" Appuie sur ENTER pour sauter le tutoriel et/ou aller au jeu!",{
+           width : 600,
+        
+           
+        }),
+        
+        anchor("center"),
+        pos(1150,150) 
+        
+     ]);
+
+     add([
+        text(" Touches flèches pour se déplacer",{
+           width : 500,
+        
+           
+        }),
+        
+        anchor("center"),
+        pos(300,300) 
+        
+     ]);
+
+     add([
+        text(" Touche spacebar pour sauter",{
+           width : 500,
+        
+           
+        }),
+        
+        anchor("center"),
+        pos(1050,400) 
+        
+     ]);
+
+     const keys = add([
+        sprite("arrows"),
+        scale(1),
+        anchor("center"),
+        pos(400,500)
+     ])
+
+
+
+     const space = add([
+        sprite("space"),
+        scale(1),
+        anchor("center"),
+        pos(1000,550)
+     ])
+
+
+
+
+    onKeyPress ("enter", () =>{
+        music.paused = true;
+        go ("game");
+     })
+
+});
 
 scene("game", ({ levelId, temps } = { levelId: 0, temps: 0 }) => {
 
