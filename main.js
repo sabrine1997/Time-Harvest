@@ -5,6 +5,7 @@ kaboom({
     height : 800,
     letterbox : true // prendre l'entier de la fenêtre
  })
+// Music comes from https://not-jam.itch.io/not-jam-music-pack and has been renamed for coding convenience
 
 loadSound('welcome',"music/welcome.wav");
 loadSound('intro',"music/intro.wav");
@@ -13,11 +14,17 @@ loadSound('gameplay',"music/gameplay.wav");
 loadSound('finish',"music/finish.wav");
 loadSound('end', "music/end.wav");
 
+//Characters come from : https://free-game-assets.itch.io/free-tiny-hero-sprites-pixel-art
+
 loadSprite('pinky',"characters/Pinky.png");
 loadSprite('ghosty',"characters/Ghosty.png");
 loadSprite('dude',"characters/Dude.png");
+
+// leafs comes from a pack titled Pixel UI pack 3, for some reasons I can't find it neither on itch nor my historic anymore
 loadSprite('leafs',"characters/leafs.png");
 
+
+Backgrounds come from https://free-game-assets.itch.io/nature-landscapes-free-pixel-art and https://edermunizz.itch.io/free-pixel-art-forest?download
 loadSprite('background1',"backgrounds/origbig.png");
 loadSprite('background2',"backgrounds/forest.png");
 loadSprite('background3',"backgrounds/field.png");
@@ -26,7 +33,7 @@ loadSprite('background4',"backgrounds/walls.png");
 loadSprite('background5',"backgrounds/blue.png");
 loadSprite('background6',"backgrounds/mountain.png");
 
-
+// following sprites all come from https://btl-games.itch.io/trash-and-junk-asset-pack
 loadSprite('wb',"trash/wb.png");
 loadSprite('swb',"trash/swb.png");
 loadSprite('wbc',"trash/wbc.png");
@@ -40,6 +47,8 @@ loadSprite('sb',"trash/sb.png");
 loadSprite('recycle',"plateforms/recyclingbin.png");
 loadSprite('passage',"plateforms/passage.png");
 
+Plateforms come from : https://ansimuz.itch.io/magic-cliffs-environment
+
 loadSprite('bar',"plateforms/bar.png");
 loadSprite('chain',"plateforms/chain.png");
 loadSprite('starttile',"plateforms/starttile.png");
@@ -49,11 +58,12 @@ loadSprite('floattile',"plateforms/floattile.png");
 loadSprite('bigfloattile',"plateforms/bigfloattile.png");
 loadSprite('tree',"plateforms/tree.png");
 
-
+// Stars also come from pack "Pixel UI pack 3" that I am somehow unable to retrieve online anymore 
 loadSprite('no star',"achievements/no star.png");
 loadSprite('half star',"achievements/half star.png");
 loadSprite('fullstar',"achievements/fullstar.png");
 
+// Sent to my by fellow student Gianmarco during Les Mystères to help complete my game 
 loadSprite('space',"tutorial/spacebar.webp");
 loadSprite('arrows',"tutorial/arrows.webp");
 
