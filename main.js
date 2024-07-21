@@ -24,7 +24,7 @@ loadSprite('dude',"characters/Dude.png");
 loadSprite('leafs',"characters/leafs.png");
 
 
-Backgrounds come from https://free-game-assets.itch.io/nature-landscapes-free-pixel-art and https://edermunizz.itch.io/free-pixel-art-forest?download
+// Backgrounds come from https://free-game-assets.itch.io/nature-landscapes-free-pixel-art and https://edermunizz.itch.io/free-pixel-art-forest?download
 loadSprite('background1',"backgrounds/origbig.png");
 loadSprite('background2',"backgrounds/forest.png");
 loadSprite('background3',"backgrounds/field.png");
@@ -47,7 +47,7 @@ loadSprite('sb',"trash/sb.png");
 loadSprite('recycle',"plateforms/recyclingbin.png");
 loadSprite('passage',"plateforms/passage.png");
 
-Plateforms come from : https://ansimuz.itch.io/magic-cliffs-environment
+// Plateforms come from : https://ansimuz.itch.io/magic-cliffs-environment
 
 loadSprite('bar',"plateforms/bar.png");
 loadSprite('chain',"plateforms/chain.png");
